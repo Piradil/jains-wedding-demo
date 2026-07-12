@@ -118,20 +118,39 @@
             z-index: 25;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        /* Subtle gold element overlays */
+        .bg-mandala-gold {
+            background-color: #1e1b15;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23b4975a' fill-opacity='0.05'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3C/g%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="bg-[#FAF9F5] text-stone-800 antialiased selection:bg-amber-100" x-data="{ pageLoaded: false }" x-init="setTimeout(() => pageLoaded = true, 50)">
 
     <!-- Modern Header & Hero Container -->
-    <header class="relative w-full min-h-[90vh] md:min-h-screen bg-stone-950 flex flex-col justify-between overflow-hidden" 
+    <header class="relative w-full min-h-[90vh] md:min-h-screen bg-stone-950 flex flex-col justify-between overflow-hidden bg-mandala-gold" 
             x-data="{ 
                 activeSlide: 0, 
-                slidesCount: 3,
-                showOverlayUI: true
+                slidesCount: 2,
+                showOverlayUI: true,
+                images: [
+                    '/images/hero1.jpg',
+                    '/images/hero2.jpg'
+                ]
             }"
             x-init="setInterval(() => activeSlide = (activeSlide + 1) % slidesCount, 6000)">
 
-        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/80 z-0"></div>
+        <!-- Dynamic Background Local Slider Loop Framework with Fluid Crossfades -->
+        <div class="absolute inset-0 z-0">
+            <template x-for="(img, idx) in images" :key="idx">
+                <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out scale-105 bg-stone-900"
+                     :class="activeSlide === idx ? 'opacity-40' : 'opacity-0'"
+                     :style="`background-image: url('${img}')`">
+                </div>
+            </template>
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/80"></div>
+        </div>
 
         <!-- Premium Navigation Layer -->
         <nav class="relative z-20 w-full border-b border-white/10 px-4 sm:px-8 py-5 flex justify-between items-center bg-transparent">
@@ -176,15 +195,6 @@
                     </h1>
                     <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.2] text-reveal-layer">
                         Handverified Blueprints <br><span class="amber-highlight">For Perfect Compatibility</span>
-                    </h1>
-                </div>
-                <!-- Slide 3 -->
-                <div class="reveal-wrapper" x-show="activeSlide === 2" x-transition:enter="transition ease-out duration-500" x-cloak>
-                    <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.2] text-base-layer">
-                        Bespoke Matchmaking <br>Built Upon Legacy
-                    </h1>
-                    <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.2] text-reveal-layer">
-                        Bespoke Matchmaking <br><span class="amber-highlight">Built Upon Legacy</span>
                     </h1>
                 </div>
             </div>
@@ -317,7 +327,7 @@
                     <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 font-serif font-bold text-lg flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">02</div>
                     <div class="space-y-1">
                         <h4 class="font-bold text-base text-stone-900 group-hover:text-amber-700 transition">Absolute Trust</h4>
-                        <p class="text-xs text-stone-400 font-light leading-relaxed">A marriage, whether love or arranged, without verified background layers would never be successful. Our rigorous screening methodology keeps match verification completely locked.</p>
+                        <p class="text-xs text-stone-400 font-light leading-relaxed"> A marriage, whether love or arranged, without verified background layers would never be successful. Our rigorous screening methodology keeps match verification completely locked.</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -332,7 +342,7 @@
         </div>
     </section>
 
-    <!-- Our Promise Section Layout (Fixed Local Pinterest Image Layer) -->
+    <!-- Our Promise Section Layout -->
     <section id="promise" class="max-w-7xl mx-auto px-4 sm:px-6 py-28 border-b border-stone-200/50 overflow-hidden" x-data="{ promiseVisible: false }" x-init="setTimeout(() => promiseVisible = true, 400)">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
