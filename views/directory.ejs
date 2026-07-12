@@ -30,6 +30,49 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+
+        /* --- SVG Flashlight Reveal Keyframe Animations --- */
+        @keyframes flashlightMove {
+            0% { transform: translate(-30%, -20%); }
+            50% { transform: translate(110%, 10%); }
+            100% { transform: translate(-30%, -20%); }
+        }
+
+        /* Container keeping text absolute and baseline aligned */
+        .reveal-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        /* The hidden baseline background text (Dimly visible) */
+        .text-base-layer {
+            color: rgba(255, 255, 255, 0.08);
+            user-select: none;
+        }
+
+        /* The illuminated text layer targeted by the masking window */
+        .text-reveal-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ffffff;
+            /* Direct CSS linear gradient masking acting as our physical spotlight mask */
+            -webkit-mask-image: radial-gradient(circle 90px at 0 0, #fff 100%, transparent 100%);
+            mask-image: radial-gradient(circle 90px at 0 0, #fff 100%, transparent 100%);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            animation: flashlightMove 8s ease-in-out infinite;
+        }
+
+        /* Highlight text styling using the warm amber theme color */
+        .text-reveal-layer .amber-highlight {
+            background: linear-gradient(to right, #fbbf24, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body class="bg-[#FAF9F5] text-stone-800 antialiased selection:bg-amber-100" x-data="{ pageLoaded: false }" x-init="setTimeout(() => pageLoaded = true, 50)">
@@ -86,26 +129,41 @@
                 Make A Difference Today
             </span>
 
-            <!-- Staggered Typography Rotators -->
+            <!-- Staggered Typography Rotators with Flashlight Reveal Masking -->
             <div class="min-h-[160px] sm:min-h-[200px] flex items-center justify-center">
                 <!-- Slide 1 Content -->
-                <div x-show="activeSlide === 0" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-4">
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.1]">
-                        Register With Us, And <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Explore The New World!</span>
+                <div x-show="activeSlide === 0" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" class="reveal-wrapper">
+                    <!-- Base Dull Layer -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.1] text-base-layer">
+                        Register With Us, And <br>Explore The New World!
+                    </h1>
+                    <!-- Illuminated Flashlight Layer -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.1] text-reveal-layer">
+                        Register With Us, And <br><span class="amber-highlight">Explore The New World!</span>
                     </h1>
                 </div>
 
                 <!-- Slide 2 Content -->
-                <div x-show="activeSlide === 1" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-4" x-cloak>
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.1]">
-                        Handverified Blueprints <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">For Perfect Compatibility</span>
+                <div x-show="activeSlide === 1" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" class="reveal-wrapper" x-cloak>
+                    <!-- Base Dull Layer -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.1] text-base-layer">
+                        Handverified Blueprints <br>For Perfect Compatibility
+                    </h1>
+                    <!-- Illuminated Flashlight Layer -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.1] text-reveal-layer">
+                        Handverified Blueprints <br><span class="amber-highlight">For Perfect Compatibility</span>
                     </h1>
                 </div>
 
                 <!-- Slide 3 Content -->
-                <div x-show="activeSlide === 2" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-4" x-cloak>
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.1]">
-                        Bespoke Matchmaking <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Built Upon Legacy</span>
+                <div x-show="activeSlide === 2" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" class="reveal-wrapper" x-cloak>
+                    <!-- Base Dull Layer -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.1] text-base-layer">
+                        Bespoke Matchmaking <br>Built Upon Legacy
+                    </h1>
+                    <!-- Illuminated Flashlight Layer -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.1] text-reveal-layer">
+                        Bespoke Matchmaking <br><span class="amber-highlight">Built Upon Legacy</span>
                     </h1>
                 </div>
             </div>
@@ -162,13 +220,13 @@
             <div class="lg:col-span-6 grid grid-cols-12 gap-4 relative" x-show="visible" x-transition:enter="transition ease-out duration-1000 transform" x-transition:enter-start="opacity-0 -translate-x-12" x-transition:enter-end="opacity-100 translate-x-0">
                 <div class="absolute -inset-4 border border-amber-700/10 rounded-3xl -z-10 transform rotate-1 hidden sm:block"></div>
                 <div class="col-span-8 overflow-hidden rounded-2xl shadow-xl border border-white/60 group bg-stone-200">
-                    <img src="https://images.pexels.com/photos/10036607/pexels-photo-10036607.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Indian Wedding Rituals" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700">
+                    <img src="https://images.pexels.com/photos/10036607/pexels-photo-10036607.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Indian Wedding" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700">
                 </div>
                 <div class="col-span-4 mt-12 overflow-hidden rounded-2xl shadow-lg border border-white/60 group bg-stone-200">
-                    <img src="https://images.pexels.com/photos/15783350/pexels-photo-15783350.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Traditional Indian Groom" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-700">
+                    <img src="https://images.pexels.com/photos/15783350/pexels-photo-15783350.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Traditional Indian Attire" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-700">
                 </div>
                 <div class="col-span-5 -mt-8 ml-8 overflow-hidden rounded-2xl shadow-lg border border-white/60 group z-10 bg-stone-200">
-                    <img src="https://images.pexels.com/photos/9311653/pexels-photo-9311653.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Indian Bride Mehendi" class="w-full h-36 object-cover transform group-hover:scale-105 transition duration-700">
+                    <img src="https://images.pexels.com/photos/9311653/pexels-photo-9311653.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Indian Groom Details" class="w-full h-36 object-cover transform group-hover:scale-105 transition duration-700">
                 </div>
                 <div class="col-span-7 bg-stone-950 text-white p-5 rounded-2xl shadow-xl -mt-4 transform hover:scale-[1.02] transition duration-300 flex flex-col justify-center">
                     <span class="text-amber-400 font-serif text-3xl font-bold">100%</span>
@@ -334,7 +392,7 @@
                 <div class="relative w-full max-w-md sm:max-w-lg aspect-[4/5] p-4 bg-white border border-stone-200/60 shadow-xl rounded-2xl group overflow-hidden bg-stone-200">
                     <div class="w-full h-full rounded-xl overflow-hidden relative">
                         <img src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                             alt="Traditional Indian Marriage Backdrop" 
+                             alt="Traditional Indian Marriage Elements" 
                              class="w-full h-full object-cover transform group-hover:scale-102 transition duration-700 filter brightness-[0.93] contrast-[1.02]">
                         <div class="absolute inset-0 bg-gradient-to-t from-stone-950/30 via-transparent to-transparent"></div>
                     </div>
