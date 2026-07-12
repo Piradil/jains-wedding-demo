@@ -11,7 +11,7 @@
     <!-- Smooth custom typeface styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2 family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-serif { font-family: 'Playfair Display', serif; }
@@ -72,6 +72,13 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Responsive Video Embed Fix */
+        .aspect-video iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border-radius: 0.75rem;
+        }
+
         /* --- Your Exact Source Layout CSS Styles --- */
         .hideBtn {
             position: absolute;
@@ -114,11 +121,11 @@
 
         /* Luxury Geometric Mandala Vector Placeholders background fallback */
         .bg-mandala-gold {
-            background-color: #2e2a24;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23b4975a' fill-opacity='0.15'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3Ccircle cx='40' cy='40' r='20' stroke='%23b4975a' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+            background-color: #1e1b15;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23b4975a' fill-opacity='0.12'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3Ccircle cx='40' cy='40' r='20' stroke='%23b4975a' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E");
         }
         .bg-mandala-light {
-            background-color: #f7f5ef;
+            background-color: #fcfbfa;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23b4975a' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='15' stroke='%23b4975a' stroke-width='1' fill='none'/%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23b4975a' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E");
         }
     </style>
@@ -291,7 +298,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             <!-- Left Vector Feature Card Frame -->
-            <div class="lg:col-span-5 bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between p-8 sm:p-10 relative bg-mandala-gold group" x-show="sectionVisible">
+            <div class="lg:col-span-5 border border-stone-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between p-8 sm:p-10 relative bg-mandala-gold group" x-show="sectionVisible">
                 <div class="space-y-4 relative z-10">
                     <span class="bg-amber-400/10 border border-amber-400/20 text-amber-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Ethos Blueprint</span>
                     <h3 class="text-2xl sm:text-3xl font-serif text-white group-hover:text-amber-400 transition duration-300 mt-2">Our Culture</h3>
@@ -334,7 +341,7 @@
         </div>
     </section>
 
-    <!-- Our Promise Section Layout (Rebuilt to absolute stability vectors) -->
+    <!-- Our Promise Section Layout -->
     <section id="promise" class="max-w-7xl mx-auto px-4 sm:px-6 py-28 border-b border-stone-200/50 overflow-hidden" x-data="{ promiseVisible: false }" x-init="setTimeout(() => promiseVisible = true, 400)">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
@@ -365,14 +372,13 @@
                 </div>
             </div>
 
-            <!-- Right Premium Vector Canvas Mosaic Box Layer -->
+            <!-- Right Canvas Mosaic Box Layer -->
             <div class="lg:col-span-6 relative order-1 lg:order-2 flex justify-center lg:justify-end items-center" x-show="promiseVisible">
                 <div class="w-full max-w-md sm:max-w-lg aspect-[4/5] p-6 bg-white border border-stone-200/60 shadow-2xl rounded-3xl bg-mandala-light flex flex-col justify-between min-h-[380px]">
                     <div class="space-y-2">
                         <span class="text-[10px] uppercase font-bold tracking-widest text-amber-700">Sacred Covenant</span>
                         <h4 class="text-stone-950 font-serif text-2xl font-light leading-snug">Ensuring Absolute Integrity in Traditional Alliances</h4>
                     </div>
-                    <!-- Central vector motif element design box structure -->
                     <div class="w-full border-t border-dashed border-stone-300 my-4"></div>
                     <p class="text-stone-500 font-light text-xs leading-relaxed">Our personalized matrimonial matches strictly operate offline, safeguarding lineages against arbitrary internet scraping vectors fully.</p>
                 </div>
@@ -440,7 +446,7 @@
         </div>
     </main>
 
-    <!-- Production-Grade Testimonials Stream Gallery Showcase Container -->
+    <!-- Production-Grade Testimonials Video Gallery Container -->
     <section class="bg-[#12110f] text-stone-100 py-20 sm:py-28 relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(#3c372f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
@@ -451,7 +457,18 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Video Card Block 1 -->
+                <!-- Video Card Block 1 (Your Requested Video Link Setup) -->
+                <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
+                    <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/AYHtriR6MgM" title="Prassane & Priyal Jain Wedding Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-4 pt-1">
+                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Prassane &amp; Priyal</h3>
+                        <p class="text-[11px] text-amber-500/80 mt-1 uppercase font-semibold tracking-wider">✨ Jain Wedding Highlights [Pune]</p>
+                    </div>
+                </div>
+
+                <!-- Video Card Block 2 -->
                 <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
                     <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
                         <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/5aTHe0_6-8E" title="Jain Wedding Celebration Timeline" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -462,7 +479,7 @@
                     </div>
                 </div>
 
-                <!-- Video Card Block 2 -->
+                <!-- Video Card Block 3 -->
                 <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
                     <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
                         <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/d39CIsg67jY" title="Traditional Marriage Ceremonials" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -470,17 +487,6 @@
                     <div class="mt-4 pt-1">
                         <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Jain Heritage Union</h3>
                         <p class="text-[11px] text-amber-500/80 mt-1 uppercase font-semibold tracking-wider">✨ Shvetambar Legacy Match</p>
-                    </div>
-                </div>
-
-                <!-- Video Card Block 3 -->
-                <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
-                    <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
-                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/S2pbyKrcUvE" title="Bespoke Matrimonial Success Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="mt-4 pt-1">
-                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Traditional Mahotsav</h3>
-                        <p class="text-[11px] text-amber-500/80 mt-1 uppercase font-semibold tracking-wider">✨ Bureau Managed Matchmaking</p>
                     </div>
                 </div>
             </div>
