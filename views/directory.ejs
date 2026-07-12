@@ -11,7 +11,7 @@
     <!-- Smooth custom typeface styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-serif { font-family: 'Playfair Display', serif; }
@@ -72,13 +72,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Responsive Video Embed Fix */
-        .aspect-video iframe {
-            width: 100% !important;
-            height: 100% !important;
-            border-radius: 0.75rem;
-        }
-
         /* --- Your Exact Source Layout CSS Styles --- */
         .hideBtn {
             position: absolute;
@@ -118,34 +111,31 @@
             z-index: 25;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        /* Luxury Geometric Mandala Vector Placeholders background fallback */
+        .bg-mandala-gold {
+            background-color: #2e2a24;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23b4975a' fill-opacity='0.15'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3Ccircle cx='40' cy='40' r='20' stroke='%23b4975a' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .bg-mandala-light {
+            background-color: #f7f5ef;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23b4975a' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='15' stroke='%23b4975a' stroke-width='1' fill='none'/%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23b4975a' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="bg-[#FAF9F5] text-stone-800 antialiased selection:bg-amber-100" x-data="{ pageLoaded: false }" x-init="setTimeout(() => pageLoaded = true, 50)">
 
-    <!-- Modern Header & Hero Slider Container -->
-    <header class="relative w-full min-h-[90vh] md:min-h-screen bg-stone-950 flex flex-col justify-between overflow-hidden" 
+    <!-- Modern Header & Hero Container -->
+    <header class="relative w-full min-h-[90vh] md:min-h-screen bg-stone-950 flex flex-col justify-between overflow-hidden bg-mandala-gold" 
             x-data="{ 
                 activeSlide: 0, 
                 slidesCount: 3,
-                showOverlayUI: true,
-                images: [
-                    'https://cdn.pixabay.com/photo/2023/07/22/09/02/wedding-8142944_1280.jpg',
-                    'https://cdn.pixabay.com/photo/2019/12/11/17/23/wedding-4688842_1280.jpg',
-                    'https://cdn.pixabay.com/photo/2017/06/21/04/47/wedding-2425946_1280.jpg'
-                ]
+                showOverlayUI: true
             }"
             x-init="setInterval(() => activeSlide = (activeSlide + 1) % slidesCount, 6000)">
 
-        <!-- Background Image Layers with Fluid Crossfade Transitions -->
-        <div class="absolute inset-0 z-0">
-            <template x-for="(img, idx) in images" :key="idx">
-                <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out scale-105 bg-stone-900"
-                     :class="activeSlide === idx ? 'opacity-40' : 'opacity-0'"
-                     :style="`background-image: url('${img}')`">
-                </div>
-            </template>
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-stone-950/80"></div>
-        </div>
+        <!-- Heavy Cinematic Dark Radial Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/80 z-0"></div>
 
         <!-- Premium Navigation Layer -->
         <nav class="relative z-20 w-full border-b border-white/10 px-4 sm:px-8 py-5 flex justify-between items-center bg-transparent">
@@ -167,17 +157,15 @@
             </div>
         </nav>
 
-        <!-- Dynamic Slide Text Composites Content Panel -->
+        <!-- Dynamic Slide Text Content Panel -->
         <div class="relative z-10 max-w-5xl mx-auto px-4 text-center my-auto pt-10 pb-20 flex flex-col items-center w-full">
-            
             <span class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-6 tracking-[0.2em] bg-white/5 px-3 py-1 rounded border border-white/10 backdrop-blur-xs">
                 Make A Difference Today
             </span>
 
             <!-- Flashlight Structural Mask Elements Layer -->
             <div class="w-full min-h-[140px] sm:min-h-[180px] flex items-center justify-center select-none">
-                
-                <!-- Slide 1 Reveal Layout -->
+                <!-- Slide 1 -->
                 <div class="reveal-wrapper" x-show="activeSlide === 0" x-transition:enter="transition ease-out duration-500">
                     <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.2] text-base-layer">
                         Register With Us, And <br>Explore The New World!
@@ -186,8 +174,7 @@
                         Register With Us, And <br><span class="amber-highlight">Explore The New World!</span>
                     </h1>
                 </div>
-
-                <!-- Slide 2 Reveal Layout -->
+                <!-- Slide 2 -->
                 <div class="reveal-wrapper" x-show="activeSlide === 1" x-transition:enter="transition ease-out duration-500" x-cloak>
                     <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.2] text-base-layer">
                         Handverified Blueprints <br>For Perfect Compatibility
@@ -196,8 +183,7 @@
                         Handverified Blueprints <br><span class="amber-highlight">For Perfect Compatibility</span>
                     </h1>
                 </div>
-
-                <!-- Slide 3 Reveal Layout -->
+                <!-- Slide 3 -->
                 <div class="reveal-wrapper" x-show="activeSlide === 2" x-transition:enter="transition ease-out duration-500" x-cloak>
                     <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-[1.2] text-base-layer">
                         Bespoke Matchmaking <br>Built Upon Legacy
@@ -208,12 +194,10 @@
                 </div>
             </div>
 
-            <!-- Subheading Information Mapping -->
             <p class="text-stone-300 max-w-xl mx-auto mt-8 text-xs sm:text-sm font-light leading-relaxed px-4">
                 Experience our service and join a welcoming community where hope thrives, and everyone is cherished.
             </p>
 
-            <!-- Action Triggers Grid Block -->
             <div class="flex flex-col sm:flex-row gap-4 items-center w-full justify-center px-4 mt-8">
                 <a href="#directory" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-orange-500/20 transform hover:-translate-y-0.5 transition duration-200 text-center">
                     Browse Profiles
@@ -224,14 +208,13 @@
             </div>
         </div>
 
-        <!-- Integrated Dynamic Target UI Blocks Using Your Exact Source Properties -->
         <button class="hideBtn hidden md:block" @click="showOverlayUI = !showOverlayUI" x-text="showOverlayUI ? 'Hide Info' : 'Show Info'"></button>
         <div class="infoText" x-show="showOverlayUI" x-transition:enter="transition ease-out duration-300" x-transition:leave="transition ease-in duration-200">
             Premium Matrimonial Service Hub for Traditional Jain Families • Call Support: +91 8983269657
         </div>
     </header>
 
-    <!-- Thin Dynamic Animated Notice Ticker Board Section -->
+    <!-- Notice Ticker Board Section -->
     <section class="w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white text-xs font-semibold uppercase tracking-wider py-3 overflow-hidden border-y border-amber-500/20 shadow-md relative z-20">
         <div class="animate-marquee whitespace-nowrap flex items-center gap-12">
             <span>✨ 14 New Verified Jain Profiles Added This Week</span>
@@ -239,33 +222,36 @@
             <span>💍 Recently Matched: Ref JW-541 & Ref JW-498 (Congratulations to both families!)</span>
             <span class="text-amber-200">•</span>
             <span>🔒 Strict Data Privacy Maintained: Profiles Shared Only Over Verified Bureau Consents</span>
-            <span class="text-amber-200">•</span>
             <span>📞 Contact +91 8983269657 For Immediate Profile Initiations</span>
-            <span class="text-amber-200">•</span>
         </div>
     </section>
 
-    <!-- Premium Dynamic About Us Section Layout -->
+    <!-- Premium About Us Section Layout -->
     <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-24 border-b border-stone-200/50" x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 200)">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-6 grid grid-cols-12 gap-4 relative" x-show="visible" x-transition:enter="transition ease-out duration-1000 transform" x-transition:enter-start="opacity-0 -translate-x-12" x-transition:enter-end="opacity-100 translate-x-0">
+            
+            <!-- Column 1: Editorial Framed Graphic Grid Blocks -->
+            <div class="lg:col-span-6 grid grid-cols-12 gap-4 relative h-[360px]" x-show="visible">
                 <div class="absolute -inset-4 border border-amber-700/10 rounded-3xl -z-10 transform rotate-1 hidden sm:block"></div>
-                <div class="col-span-8 overflow-hidden rounded-2xl shadow-xl border border-white/60 group bg-stone-200">
-                    <img src="https://cdn.pixabay.com/photo/2020/02/17/06/10/marriage-4855490_1280.jpg" alt="Indian Wedding" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700">
+                <!-- Premium Vector Layout 1 -->
+                <div class="col-span-8 overflow-hidden rounded-2xl shadow-xl border border-white/60 bg-mandala-gold flex flex-col justify-end p-6 h-72">
+                    <span class="text-xs uppercase tracking-widest font-bold text-amber-400">Sacred Purity</span>
+                    <h4 class="text-white text-lg font-serif mt-1">Vivah Sanskar</h4>
                 </div>
-                <div class="col-span-4 mt-12 overflow-hidden rounded-2xl shadow-lg border border-white/60 group bg-stone-200">
-                    <img src="https://cdn.pixabay.com/photo/2023/07/22/09/02/wedding-8142944_1280.jpg" alt="Traditional Indian Attire" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-700">
+                <!-- Premium Vector Layout 2 -->
+                <div class="col-span-4 mt-12 overflow-hidden rounded-2xl shadow-lg border border-white/60 bg-stone-900 flex flex-col justify-end p-4 h-44">
+                    <span class="text-[10px] uppercase tracking-wider text-stone-400">Ethical</span>
+                    <h5 class="text-amber-400 text-sm font-medium">Lineage</h5>
                 </div>
-                <div class="col-span-5 -mt-8 ml-8 overflow-hidden rounded-2xl shadow-lg border border-white/60 group z-10 bg-stone-200">
-                    <img src="https://cdn.pixabay.com/photo-12/11/17/23/wedding-4688842_1280.jpg" alt="Indian Groom Details" class="w-full h-36 object-cover transform group-hover:scale-105 transition duration-700">
-                </div>
-                <div class="col-span-7 bg-stone-950 text-white p-5 rounded-2xl shadow-xl -mt-4 transform hover:scale-[1.02] transition duration-300 flex flex-col justify-center">
+                <!-- Overlapping Stats Box Overlay -->
+                <div class="absolute bottom-0 right-4 left-4 sm:left-auto sm:w-80 bg-stone-950 text-white p-5 rounded-2xl shadow-2xl border border-white/10 flex flex-col justify-center">
                     <span class="text-amber-400 font-serif text-3xl font-bold">100%</span>
                     <p class="text-[11px] uppercase tracking-wider text-stone-400 font-semibold mt-1">Manual Profile Inspection & Data Security</p>
                 </div>
             </div>
 
-            <div class="lg:col-span-6 space-y-6" x-show="visible" x-transition:enter="transition ease-out duration-1000 transform delay-300" x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
+            <!-- Column 2: Content -->
+            <div class="lg:col-span-6 space-y-6">
                 <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-50 px-3 py-1.5 rounded border border-amber-200/40">Who We Are</span>
                 <h2 class="text-3xl sm:text-4xl font-light font-serif tracking-tight text-stone-950 leading-tight">
                     Preserving Traditions, Simplifying <br>
@@ -275,14 +261,14 @@
                     At <strong class="font-semibold text-stone-900">Jain's Wedding</strong>, we understand that marriage is a coming together of family legacies, spiritual paths, and shared moral pillars. We operate exclusively as a premium, hand-screened matrimonial bureau built natively for Digambar and Shvetambar communities globally.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-stone-200/60 shadow-xs hover:border-amber-700/20 transition">
+                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-stone-200/60 shadow-xs">
                         <span class="p-2 rounded-lg bg-amber-50 text-amber-700 mt-0.5">💍</span>
                         <div>
                             <h4 class="font-semibold text-xs text-stone-900 uppercase tracking-wider">Direct Matchmaking</h4>
                             <p class="text-[11px] text-stone-400 font-light mt-0.5">Offline human filters instead of messy public social networks.</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-stone-200/60 shadow-xs hover:border-amber-700/20 transition">
+                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-stone-200/60 shadow-xs">
                         <span class="p-2 rounded-lg bg-amber-50 text-amber-700 mt-0.5">🔒</span>
                         <div>
                             <h4 class="font-semibold text-xs text-stone-900 uppercase tracking-wider">Absolute Discretion</h4>
@@ -294,7 +280,7 @@
         </div>
     </section>
 
-    <!-- Refactored Premium "Experience With Us" Section -->
+    <!-- Experience With Us Section (Rebuilt With High-Fidelity Vector Panels) -->
     <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 py-24 border-b border-stone-200/50" x-data="{ sectionVisible: false }" x-init="setTimeout(() => sectionVisible = true, 300)">
         <div class="text-center mb-16 space-y-3">
             <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-50 px-3 py-1.5 rounded border border-amber-200/40 inline-block">Experience With Us</span>
@@ -304,76 +290,54 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
-            <!-- Left Banner: Stable Pixabay CDN Indian Bridal Image -->
-            <div class="lg:col-span-5 bg-white border border-stone-200/60 rounded-3xl overflow-hidden shadow-xl flex flex-col group"
-                 x-show="sectionVisible" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 scale-95">
-                <div class="h-64 sm:h-80 overflow-hidden relative bg-stone-900">
-                    <img src="https://cdn.pixabay.com/photo/2023/07/22/09/02/wedding-8142944_1280.jpg" alt="Jain Marriage Culture" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-amber-800 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full border border-stone-200">Heritage</span>
+            <!-- Left Vector Feature Card Frame -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between p-8 sm:p-10 relative bg-mandala-gold group" x-show="sectionVisible">
+                <div class="space-y-4 relative z-10">
+                    <span class="bg-amber-400/10 border border-amber-400/20 text-amber-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Ethos Blueprint</span>
+                    <h3 class="text-2xl sm:text-3xl font-serif text-white group-hover:text-amber-400 transition duration-300 mt-2">Our Culture</h3>
+                    <p class="text-stone-300 font-light text-xs sm:text-sm leading-relaxed">
+                        Jain weddings are known for their simplicity, sanctity, purity, and involve a number of intricate rituals and customs that are deeply rooted in the rich lineage of mutual familial respect.
+                    </p>
                 </div>
-                <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-stone-900 group-hover:text-amber-700 transition duration-300">Our Culture</h3>
-                        <p class="text-stone-500 font-light text-xs sm:text-sm leading-relaxed mt-2">
-                            Jain weddings are known for their simplicity, sanctity, purity, and involve a number of intricate rituals and customs that are deeply rooted in the rich lineage of mutual familial respect.
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs font-bold text-amber-700 uppercase tracking-wider group-hover:translate-x-2 transition duration-300">
-                        Explore Methodology <span>&rarr;</span>
-                    </div>
+                <div class="text-xs font-bold text-amber-400 uppercase tracking-wider pt-8 relative z-10 group-hover:translate-x-2 transition duration-300">
+                    Explore Matchmaking System &rarr;
                 </div>
             </div>
 
-            <!-- Right Column Cards: Clean Typography Grid Layout -->
+            <!-- Right Structured Values Info Rows -->
             <div class="lg:col-span-7 flex flex-col justify-between gap-6">
-                
-                <!-- Card 1: Know Each Other -->
-                <div class="bg-white border border-stone-200/50 hover:border-amber-700/20 rounded-2xl p-6 flex items-start gap-6 shadow-sm hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-0.5"
-                     x-show="sectionVisible" x-transition:enter="transition ease-out duration-700 delay-200">
-                    <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-200/50 text-amber-700 flex items-center justify-center shrink-0 font-serif text-2xl font-bold group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">
-                        01
-                    </div>
-                    <div class="flex-1 space-y-1">
+                <!-- Card 1 -->
+                <div class="bg-white border border-stone-200/50 rounded-2xl p-6 flex items-start gap-6 shadow-xs hover:shadow-md transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 font-serif font-bold text-lg flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">01</div>
+                    <div class="space-y-1">
                         <h4 class="font-bold text-base text-stone-900 group-hover:text-amber-700 transition">Know Each Other</h4>
                         <p class="text-xs text-stone-400 font-light leading-relaxed">Support, trust, and honesty are givens. We facilitate balanced family conversations with complete comfort parameters to build lifelong legacy unions securely.</p>
                     </div>
                 </div>
-
-                <!-- Card 2: Absolute Trust -->
-                <div class="bg-white border border-stone-200/50 hover:border-amber-700/20 rounded-2xl p-6 flex items-start gap-6 shadow-sm hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-0.5"
-                     x-show="sectionVisible" x-transition:enter="transition ease-out duration-700 delay-350">
-                    <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-200/50 text-amber-700 flex items-center justify-center shrink-0 font-serif text-2xl font-bold group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">
-                        02
-                    </div>
-                    <div class="flex-1 space-y-1">
+                <!-- Card 2 -->
+                <div class="bg-white border border-stone-200/50 rounded-2xl p-6 flex items-start gap-6 shadow-xs hover:shadow-md transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 font-serif font-bold text-lg flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">02</div>
+                    <div class="space-y-1">
                         <h4 class="font-bold text-base text-stone-900 group-hover:text-amber-700 transition">Absolute Trust</h4>
                         <p class="text-xs text-stone-400 font-light leading-relaxed">A marriage, whether love or arranged, without verified background layers would never be successful. Our rigorous screening methodology keeps match verification completely locked.</p>
                     </div>
                 </div>
-
-                <!-- Card 3: Honour & Heritage -->
-                <div class="bg-white border border-stone-200/50 hover:border-amber-700/20 rounded-2xl p-6 flex items-start gap-6 shadow-sm hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-0.5"
-                     x-show="sectionVisible" x-transition:enter="transition ease-out duration-700 delay-500">
-                    <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-200/50 text-amber-700 flex items-center justify-center shrink-0 font-serif text-2xl font-bold group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">
-                        03
-                    </div>
-                    <div class="flex-1 space-y-1">
-                        <h4 class="font-bold text-base text-stone-900 group-hover:text-amber-700 transition">Honour & Heritage</h4>
+                <!-- Card 3 -->
+                <div class="bg-white border border-stone-200/50 rounded-2xl p-6 flex items-start gap-6 shadow-xs hover:shadow-md transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 font-serif font-bold text-lg flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-inner">03</div>
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-base text-stone-900 group-hover:text-amber-700 transition">Honour &amp; Heritage</h4>
                         <p class="text-xs text-stone-400 font-light leading-relaxed">When we honor ancestral ethos, we honor the foundations of a true marriage. Our personalized offline placement system reflects traditional community values implicitly.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Bespoke Re-engineered "Our Promise" Section (Fixed Image Asset) -->
+    <!-- Our Promise Section Layout (Rebuilt to absolute stability vectors) -->
     <section id="promise" class="max-w-7xl mx-auto px-4 sm:px-6 py-28 border-b border-stone-200/50 overflow-hidden" x-data="{ promiseVisible: false }" x-init="setTimeout(() => promiseVisible = true, 400)">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
-            <!-- Left Narrative Structural Box -->
             <div class="lg:col-span-6 space-y-8 order-2 lg:order-1" x-show="promiseVisible" x-transition:enter="transition ease-out duration-1000 transform" x-transition:enter-start="opacity-0 translate-y-8">
                 <div class="space-y-3">
                     <div class="flex items-center gap-2">
@@ -382,174 +346,141 @@
                     </div>
                     <h2 class="text-4xl sm:text-5xl font-light font-serif tracking-tight text-stone-950 leading-[1.15]">
                         A Sanctified Pledge to <br>
-                        <span class="italic font-medium text-amber-700 border-b-2 border-amber-200/60 pb-1">Serve, Love, & Nurture Growth</span>
+                        <span class="italic font-medium text-amber-700 border-b-2 border-amber-200/60 pb-1">Serve, Love, &amp; Nurture Growth</span>
                     </h2>
                 </div>
-                
                 <p class="text-stone-900 font-semibold text-base leading-relaxed tracking-tight max-w-xl">
                     Our mission is centered on multiplying familial trust, offering strategic structural support, and guiding our community with distinct gratitude.
                 </p>
-
                 <div class="relative bg-white border border-stone-200/40 p-6 sm:p-8 rounded-2xl shadow-sm space-y-4">
-                    <div class="absolute top-0 left-6 -translate-y-1/2 bg-amber-600 text-white font-mono text-xs px-3 py-1.5 rounded-md shadow-md uppercase tracking-wider font-semibold">Ethos Blueprint</div>
+                    <div class="absolute top-0 left-6 -translate-y-1/2 bg-amber-600 text-white font-mono text-xs px-3 py-1.5 rounded-md shadow-md">Ethos Blueprint</div>
                     <p class="text-stone-500 font-light text-xs sm:text-sm leading-relaxed">
                         With the blessing of our values, we actively empower the modern Jain community to foster high-compatibility unions without exposing sensitive lineage metrics to public boards. We operate out of absolute truth, rigorous human data screening, and impactful discretion.
                     </p>
                 </div>
-
                 <div class="pt-2">
-                    <a href="https://wa.me/918983269657?text=Hello%20Jain's%20Wedding,%20I%20would%20like%20to%20consult%20regarding%20your%20matchmaking%20plans." 
-                       target="_blank"
-                       class="inline-flex items-center gap-3 px-8 py-4 bg-stone-950 hover:bg-amber-700 text-white rounded-xl text-xs font-semibold uppercase tracking-widest shadow-xl shadow-stone-900/10 transition-all duration-300 transform hover:-translate-y-0.5 group">
+                    <a href="https://wa.me/918983269657" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-stone-950 hover:bg-amber-700 text-white rounded-xl text-xs font-semibold uppercase tracking-widest shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
                         <span>Initiate Confidential Consultation</span>
-                        <span class="transform group-hover:translate-x-1 transition duration-200">&rarr;</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Right Column: Stable Pixabay CDN Asset Instead of Broken Unsplash Box -->
-            <div class="lg:col-span-6 relative order-1 lg:order-2 flex justify-center lg:justify-end items-center"
-                 x-show="promiseVisible" x-transition:enter="transition ease-out duration-1000 transform delay-200" x-transition:enter-start="opacity-0 scale-95">
-                
-                <!-- Main Luxury Canvas Wrapper Frame -->
-                <div class="relative w-full max-w-md sm:max-w-lg aspect-[4/5] p-4 bg-white border border-stone-200/60 shadow-xl rounded-2xl group overflow-hidden bg-stone-200">
-                    <div class="w-full h-full rounded-xl overflow-hidden relative">
-                        <img src="https://cdn.pixabay.com/photo/2019/12/11/17/23/wedding-4688842_1280.jpg" 
-                             alt="Traditional Indian Marriage Elements" 
-                             class="w-full h-full object-cover transform group-hover:scale-102 transition duration-700 filter brightness-[0.93] contrast-[1.02]">
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950/30 via-transparent to-transparent"></div>
+            <!-- Right Premium Vector Canvas Mosaic Box Layer -->
+            <div class="lg:col-span-6 relative order-1 lg:order-2 flex justify-center lg:justify-end items-center" x-show="promiseVisible">
+                <div class="w-full max-w-md sm:max-w-lg aspect-[4/5] p-6 bg-white border border-stone-200/60 shadow-2xl rounded-3xl bg-mandala-light flex flex-col justify-between min-h-[380px]">
+                    <div class="space-y-2">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-amber-700">Sacred Covenant</span>
+                        <h4 class="text-stone-950 font-serif text-2xl font-light leading-snug">Ensuring Absolute Integrity in Traditional Alliances</h4>
                     </div>
+                    <!-- Central vector motif element design box structure -->
+                    <div class="w-full border-t border-dashed border-stone-300 my-4"></div>
+                    <p class="text-stone-500 font-light text-xs leading-relaxed">Our personalized matrimonial matches strictly operate offline, safeguarding lineages against arbitrary internet scraping vectors fully.</p>
                 </div>
 
-                <!-- REINVENTED SHIELD OVERLAY -->
-                <div class="absolute -bottom-6 -left-4 sm:left-6 lg:-left-12 bg-stone-950 text-white p-6 rounded-2xl border border-white/10 shadow-2xl max-w-[210px] transform hover:rotate-1 hover:scale-105 transition-all duration-300 group cursor-pointer"
-                     x-data="{ count: 450 }" @mouseenter="count = count + 1">
+                <!-- Modern Geometry Badge Box -->
+                <div class="absolute -bottom-6 -left-4 sm:left-6 lg:-left-12 bg-stone-950 text-white p-6 rounded-2xl border border-white/10 shadow-2xl max-w-[210px]" x-data="{ count: 450 }" @mouseenter="count = count + 1">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center border-b border-white/10 pb-2">
                             <span class="text-[9px] uppercase tracking-[0.2em] text-amber-400 font-bold">Bureau Status</span>
-                            <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50"></div>
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm"></div>
                         </div>
                         <div class="space-y-1">
                             <div class="text-2xl font-serif text-white tracking-tight font-medium flex items-center gap-1.5">
                                 <span x-text="count"></span><span class="text-amber-500 text-lg">+</span>
                             </div>
-                            <p class="text-[10px] uppercase tracking-wider text-stone-400 font-medium leading-normal">Verified Families Connected Globally</p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-center text-[9px] uppercase tracking-widest font-bold text-amber-400/90 group-hover:bg-amber-600 group-hover:text-white transition duration-300">
-                            Verified Bureau
+                            <p class="text-[10px] uppercase tracking-wider text-stone-400 font-medium">Verified Families Connected</p>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </section>
 
-    <!-- Interactive Profiles Grid Dashboard -->
+    <!-- Profiles Filter Workspace -->
     <main id="directory" class="max-w-7xl mx-auto px-4 sm:px-6 py-20" x-data="{ activeSect: 'all' }">
-        
         <div class="text-center mb-12">
             <span class="text-xs uppercase tracking-widest font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded border border-amber-200/50">Curated Matches</span>
             <h2 class="text-3xl font-light text-stone-900 tracking-tight mt-3">Verified Prospects</h2>
         </div>
 
-        <!-- Modernist Responsive Filter Control Tabs -->
-        <div class="flex space-x-1 max-w-xs sm:max-w-md mx-auto mb-16 bg-stone-200/50 p-1 sm:p-1.5 rounded-full border border-stone-200/20 backdrop-blur-sm shadow-inner">
-            <button @click="activeSect = 'all'" :class="activeSect === 'all' ? 'bg-white text-stone-950 shadow-sm font-semibold' : 'text-stone-500 hover:text-stone-800 font-medium'" class="w-full py-2 rounded-full text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300">All</button>
-            <button @click="activeSect = 'Digambar'" :class="activeSect === 'Digambar' ? 'bg-white text-stone-950 shadow-sm font-semibold' : 'text-stone-500 hover:text-stone-800 font-medium'" class="w-full py-2 rounded-full text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300">Digambar</button>
-            <button @click="activeSect = 'Shvetambar'" :class="activeSect === 'Shvetambar' ? 'bg-white text-stone-950 shadow-sm font-semibold' : 'text-stone-500 hover:text-stone-800 font-medium'" class="w-full py-2 rounded-full text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300">Shvetambar</button>
+        <div class="flex space-x-1 max-w-xs sm:max-w-md mx-auto mb-16 bg-stone-200/50 p-1 rounded-full border border-stone-200/20 backdrop-blur-sm shadow-inner">
+            <button @click="activeSect = 'all'" :class="activeSect === 'all' ? 'bg-white text-stone-950 shadow-sm font-semibold' : 'text-stone-500'" class="w-full py-2 rounded-full text-xs uppercase tracking-wider transition-all duration-300">All</button>
+            <button @click="activeSect = 'Digambar'" :class="activeSect === 'Digambar' ? 'bg-white text-stone-950 shadow-sm font-semibold' : 'text-stone-500'" class="w-full py-2 rounded-full text-xs uppercase tracking-wider transition-all duration-300">Digambar</button>
+            <button @click="activeSect = 'Shvetambar'" :class="activeSect === 'Shvetambar' ? 'bg-white text-stone-950 shadow-sm font-semibold' : 'text-stone-500'" class="w-full py-2 rounded-full text-xs uppercase tracking-wider transition-all duration-300">Shvetambar</button>
         </div>
 
-        <!-- Fully Responsive Profiles Grid Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <% if (Array.isArray(profiles) && profiles.length > 0) { %>
-                <% profiles.forEach((profile, index) => { %>
-                    <div 
-                        x-show="activeSect === 'all' || activeSect === '<%= profile.acf?.sect %>'"
-                        x-transition:enter="transition ease-out duration-500 cubic-bezier(0.16, 1, 0.3, 1)"
-                        x-transition:enter-start="opacity-0 translate-y-6 scale-98"
-                        x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-                        class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-stone-200/50 hover:border-amber-700/30 hover:shadow-2xl hover:shadow-stone-200/60 transition-all duration-500 flex flex-col justify-between group transform hover:-translate-y-1"
-                    >
+            <% if (typeof profiles !== 'undefined' && Array.isArray(profiles) && profiles.length > 0) { %>
+                <% profiles.forEach((profile) => { %>
+                    <div x-show="activeSect === 'all' || activeSect === '<%= profile.acf?.sect %>'" class="bg-white rounded-3xl p-6 border border-stone-200/50 shadow-xs flex flex-col justify-between">
                         <div>
-                            <!-- Header Info Panel -->
-                            <div class="flex justify-between items-center mb-5">
-                                <span class="text-[9px] sm:text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-full border border-emerald-200/20 tracking-wider uppercase flex items-center gap-1.5 shadow-inner">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                    Verified
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-full border border-emerald-200/20 uppercase tracking-wider flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Verified
                                 </span>
-                                <span class="text-[11px] text-stone-400 font-mono tracking-tight bg-stone-50 px-2 py-0.5 rounded border border-stone-100">Ref: JW-<%= profile.acf?.profile_id || '000' %></span>
+                                <span class="text-[11px] text-stone-400 font-mono">Ref: JW-<%= profile.acf?.profile_id || '000' %></span>
                             </div>
+                            <h2 class="text-lg font-semibold text-stone-900 mb-1"><%= profile.title?.rendered %></h2>
+                            <p class="text-[11px] text-stone-400 font-bold uppercase tracking-widest mb-4"><%= profile.acf?.sect || 'General' %> • Gothra: <%= profile.acf?.gothra || 'N/A' %></p>
                             
-                            <!-- Identification Data Titles -->
-                            <h2 class="text-lg sm:text-xl font-semibold text-stone-900 mb-1 group-hover:text-amber-800 transition duration-300"><%= profile.title?.rendered %></h2>
-                            <p class="text-[11px] text-stone-400 font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <span><%= profile.acf?.sect || 'General' %></span>
-                                <span class="w-1 h-1 rounded-full bg-stone-300"></span>
-                                <span class="text-stone-500">Gothra: <%= profile.acf?.gothra || 'N/A' %></span>
-                            </p>
-                            
-                            <!-- Core Structured Properties List -->
-                            <div class="space-y-3 text-xs sm:text-sm text-stone-600 bg-stone-50/70 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-stone-200/30 mb-6 sm:mb-8 shadow-inner">
-                                <div class="flex justify-between items-center"><span class="text-stone-400 font-light">Age / Height</span> <span class="font-medium text-stone-800"><%= profile.acf?.age || 'N/A' %> Yrs / <%= profile.acf?.height || 'N/A' %></span></div>
-                                <div class="flex justify-between items-center"><span class="text-stone-400 font-light">Education</span> <span class="font-medium text-stone-800 tracking-tight text-right max-w-[180px] truncate"><%= profile.acf?.education || 'N/A' %></span></div>
-                                <div class="flex justify-between items-center"><span class="text-stone-400 font-light">Profession</span> <span class="font-medium text-stone-800 text-right max-w-[180px] truncate"><%= profile.acf?.profession || 'N/A' %></span></div>
-                                <div class="flex justify-between items-center"><span class="text-stone-400 font-light">Diet Profile</span> <span class="font-medium text-stone-700 text-[11px] px-2 py-0.5 bg-white border border-stone-200 rounded-md"><%= profile.acf?.diet || 'N/A' %></span></div>
-                                <div class="flex justify-between items-center"><span class="text-stone-400 font-light">Location</span> <span class="font-medium text-stone-800"><%= profile.acf?.location || 'N/A' %></span></div>
+                            <div class="space-y-2.5 text-xs text-stone-600 bg-stone-50 p-4 rounded-xl border border-stone-200/30 mb-6">
+                                <div class="flex justify-between"><span class="text-stone-400">Age / Height</span><span class="font-medium text-stone-800"><%= profile.acf?.age || 'N/A' %> Yrs / <%= profile.acf?.height || 'N/A' %></span></div>
+                                <div class="flex justify-between"><span class="text-stone-400">Education</span><span class="font-medium text-stone-800 max-w-[160px] truncate"><%= profile.acf?.education || 'N/A' %></span></div>
+                                <div class="flex justify-between"><span class="text-stone-400">Profession</span><span class="font-medium text-stone-800 max-w-[160px] truncate"><%= profile.acf?.profession || 'N/A' %></span></div>
+                                <div class="flex justify-between"><span class="text-stone-400">Location</span><span class="font-medium text-stone-800"><%= profile.acf?.location || 'N/A' %></span></div>
                             </div>
                         </div>
-
-                        <!-- One-Click Inquiry Routing to WhatsApp Support Team -->
-                        <a href="https://wa.me/918983269657?text=Hello%20Jain's%20Wedding,%20I%20am%20interested%20in%20learning%20more%20about%20Profile%20Ref:%20JW-<%= profile.acf?.profile_id || '000' %>" 
-                           target="_blank"
-                           class="w-full text-center bg-stone-950 text-white py-3 sm:py-3.5 rounded-xl sm:rounded-2xl text-[11px] sm:text-xs font-semibold uppercase tracking-widest hover:bg-amber-700 shadow-md hover:shadow-amber-700/20 transition-all duration-300 block">
-                            Inquire via Bureau
-                        </a>
+                        <a href="https://wa.me/918983269657?text=Interested%20in%20JW-<%= profile.acf?.profile_id || '000' %>" target="_blank" class="w-full text-center bg-stone-950 text-white py-3 rounded-xl text-xs font-semibold uppercase tracking-widest hover:bg-amber-700 transition duration-300 block">Inquire via Bureau</a>
                     </div>
                 <% }) %>
+            <% } else { %>
+                <div class="col-span-full text-center text-stone-400 py-12 text-sm font-light">No verified prospects available at this moment.</div>
             <% } %>
         </div>
     </main>
 
-    <!-- Dynamic Premium Video Testimonials Grid Section -->
-    <section class="bg-[#141311] text-stone-100 py-16 sm:py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(#383530_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative">
-            <div class="text-center mb-12 sm:mb-20">
-                <span class="text-amber-500 text-[10px] sm:text-xs font-bold tracking-widest uppercase bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Celebrations</span>
-                <h2 class="text-2xl sm:text-4xl md:text-5xl font-light font-serif tracking-tight mt-4 text-white">Union Testimonials</h2>
-                <p class="text-stone-500 text-xs sm:text-sm max-w-sm mx-auto mt-3 font-light px-4">Documented verification stories from families who discovered matches with our administrative help.</p>
+    <!-- Production-Grade Testimonials Stream Gallery Showcase Container -->
+    <section class="bg-[#12110f] text-stone-100 py-20 sm:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#3c372f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 text-xs font-bold tracking-widest uppercase bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Celebrations</span>
+                <h2 class="text-3xl sm:text-5xl font-light font-serif tracking-tight mt-4 text-white">Union Testimonials</h2>
+                <p class="text-stone-500 text-xs sm:text-sm max-w-sm mx-auto mt-3 font-light">Documented success milestones from respected traditional families who connected with our administrative assistance.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Video 1 -->
-                <div class="bg-stone-900/40 border border-stone-800/60 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-xl hover:border-amber-600/30 transition duration-300 group">
-                    <div class="aspect-video bg-black rounded-xl overflow-hidden relative shadow-inner border border-stone-800/80">
-                        <iframe src="https://www.youtube.com/embed/5aTHe0_6-8E" title="Testimonial 1" allowfullscreen></iframe>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video Card Block 1 -->
+                <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
+                    <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/5aTHe0_6-8E" title="Jain Wedding Celebration Timeline" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="mt-4">
-                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Amit &amp; Pooja Shah</h3>
-                        <p class="text-[11px] text-stone-500 mt-1 flex items-center gap-1.5">💍 Matched in Digambar Community</p>
-                    </div>
-                </div>
-                <!-- Video 2 -->
-                <div class="bg-stone-900/40 border border-stone-800/60 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-xl hover:border-amber-600/30 transition duration-300 group">
-                    <div class="aspect-video bg-black rounded-xl overflow-hidden relative shadow-inner border border-stone-800/80">
-                        <iframe src="https://www.youtube.com/embed/d39CIsg67jY" title="Testimonial 2" allowfullscreen></iframe>
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Rohan &amp; Neha Jain</h3>
-                        <p class="text-[11px] text-stone-500 mt-1 flex items-center gap-1.5">💍 Matched in Shvetambar Community</p>
+                    <div class="mt-4 pt-1">
+                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Shah Family Alliance</h3>
+                        <p class="text-[11px] text-amber-500/80 mt-1 uppercase font-semibold tracking-wider">✨ Verified Digambar Union</p>
                     </div>
                 </div>
-                <!-- Video 3 -->
-                <div class="bg-stone-900/40 border border-stone-800/60 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-xl hover:border-amber-600/30 transition duration-300 group">
-                    <div class="aspect-video bg-black rounded-xl overflow-hidden relative shadow-inner border border-stone-800/80">
-                        <iframe src="https://www.youtube.com/embed/S2pbyKrcUvE" title="Testimonial 3" allowfullscreen></iframe>
+
+                <!-- Video Card Block 2 -->
+                <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
+                    <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/d39CIsg67jY" title="Traditional Marriage Ceremonials" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="mt-4">
-                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Vikas &amp; Riya Jain</h3>
-                        <p class="text-[11px] text-stone-500 mt-1 flex items-center gap-1.5">💍 Traditional Bureau Success Story</p>
+                    <div class="mt-4 pt-1">
+                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Jain Heritage Union</h3>
+                        <p class="text-[11px] text-amber-500/80 mt-1 uppercase font-semibold tracking-wider">✨ Shvetambar Legacy Match</p>
+                    </div>
+                </div>
+
+                <!-- Video Card Block 3 -->
+                <div class="bg-stone-900/60 border border-stone-800/80 rounded-2xl p-4 flex flex-col justify-between backdrop-blur-md shadow-2xl group hover:border-amber-600/30 transition duration-300">
+                    <div class="w-full aspect-video bg-stone-950 rounded-xl overflow-hidden shadow-inner border border-stone-800">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/S2pbyKrcUvE" title="Bespoke Matrimonial Success Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-4 pt-1">
+                        <h3 class="font-medium text-stone-200 text-base tracking-tight group-hover:text-amber-400 transition duration-300">Traditional Mahotsav</h3>
+                        <p class="text-[11px] text-amber-500/80 mt-1 uppercase font-semibold tracking-wider">✨ Bureau Managed Matchmaking</p>
                     </div>
                 </div>
             </div>
